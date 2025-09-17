@@ -10,6 +10,8 @@ function PersonalInfo({ general, setCvData }) {
       ...formData,
       [name]: value,
     });
+
+    console.log(formData);
   }
 
   function handleSubmit(e) {
@@ -25,7 +27,7 @@ function PersonalInfo({ general, setCvData }) {
 
   function handleEdit() {
     setIsEditing(true);
-    console.log(general);
+    // console.log(general);
   }
 
   return (

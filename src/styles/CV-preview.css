@@ -1,0 +1,33 @@
+.cv-preview {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-start; */
+  /* justify-self: flex-start; */
+  align-items: center;
+  min-width: 900px;
+  height: 100vh;
+  gap: 10px;
+  padding: 40px;
+  /* box-shadow: 0 4px 6px oklch(0% 0 0 / 0.1), 0 2px 4px oklch(0% 0 0 / 0.06); */
+  box-shadow: 0 10px 25px oklch(0% 0 0 / 0.15), 0 4px 10px oklch(0% 0 0 / 0.1);
+  /* border-radius: 8px; */
+  background-color: oklch(98% 0 0);
+}
+
+.personal-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.side-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* align-items: center; */
+  gap: 50px;
+  width: 100%;
+}
