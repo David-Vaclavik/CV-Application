@@ -5,7 +5,7 @@
   /* justify-self: flex-start; */
   align-items: center;
   min-width: 900px;
-  height: 100vh;
+  min-height: 100vh;
   gap: 10px;
   padding: 40px;
   /* box-shadow: 0 4px 6px oklch(0% 0 0 / 0.1), 0 2px 4px oklch(0% 0 0 / 0.06); */
@@ -30,4 +30,39 @@
   /* align-items: center; */
   gap: 50px;
   width: 100%;
+}
+
+.education-section {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  /* align-items: flex-start; */
+  /* width: 100%; */
+  gap: 10px;
+}
+
+.school-info {
+  display: flex;
+  /* justify-content: space-between; */
+  /* align-items: flex-start; */
+  width: 100%;
+  /* gap: 5px; */
+}
+
+.date-location {
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-end; */
+  /* gap: 5px; */
+
+  min-width: 350px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+p,
+b {
+  font-size: 24px;
 }

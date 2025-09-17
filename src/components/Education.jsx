@@ -10,7 +10,8 @@ function Education({ education, setCvData }) {
     location: "",
   });
 
-  const nextId = useRef(0);
+  // starts from 5 because of example data
+  const nextId = useRef(5);
   // Add a state to track which education entry is being edited
   const [editingIndex, setEditingIndex] = useState(null);
 

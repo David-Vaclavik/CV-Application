@@ -4,6 +4,39 @@ import { PersonalInfo } from "./components/Personal-info";
 import { CVPreview } from "./components/CV-preview";
 import { Education } from "./components/Education";
 
+// eslint-disable-next-line
+const educationExample = {
+  id: 0,
+  school: "New York University",
+  degree: "Bachelor of Science in Computer Science",
+  studyDate: "2020-2024",
+  location: "New York, USA",
+};
+
+const educationArray = [
+  {
+    id: 0,
+    school: "New York University",
+    degree: "Bachelor of Science in Computer Science",
+    studyDate: "2020-2024",
+    location: "New York, USA",
+  },
+  {
+    id: 1,
+    school: "Harvard University",
+    degree: "Master of Business Administration",
+    studyDate: "2024-2026",
+    location: "Cambridge, Massachusetts",
+  },
+  {
+    id: 2,
+    school: "Stanford University",
+    degree: "PhD in Artificial Intelligence",
+    studyDate: "2026-2030",
+    location: "Stanford, California",
+  },
+];
+
 function App() {
   const [cvData, setCvData] = useState({
     general: {
@@ -12,7 +45,8 @@ function App() {
       phone: "123-456-7890",
       address: "123 Main St, City",
     },
-    education: [],
+    // education: [educationExample],
+    education: educationArray,
     experience: [],
   });
 
