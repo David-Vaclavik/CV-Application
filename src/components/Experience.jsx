@@ -1,18 +1,18 @@
 import { useState, useRef } from "react";
 
-function Education({ education, setCvData }) {
+function Experience({ experience, setCvData }) {
   const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState({
     id: 0,
-    school: "",
-    degree: "",
-    studyDate: "",
+    company: "",
+    position: "",
+    workDate: "",
     location: "",
   });
 
   // starts from 5 because of example data
   const nextId = useRef(5);
-  // Add a state to track which education entry is being edited
+  // Add a state to track which experience entry is being edited
   const [editingIndex, setEditingIndex] = useState(null);
 
   function handleChange(e) {
@@ -26,18 +26,18 @@ function Education({ education, setCvData }) {
 
     setCvData((prev) => {
       if (editingIndex !== null) {
-        // Update existing education entry
-        const updatedEducation = [...prev.education];
-        updatedEducation[editingIndex] = formData;
+        // Update existing experience entry
+        const updatedExperience = [...prev.experience];
+        updatedExperience[editingIndex] = formData;
         return {
           ...prev,
-          education: updatedEducation,
+          experience: updatedExperience,
         };
       } else {
-        // Add new education entry
+        // Add new experience entry
         return {
           ...prev,
-          education: [...prev.education, { ...formData, id: nextId.current }],
+          experience: [...prev.experience, { ...formData, id: nextId.current }],
         };
       }
     });
@@ -49,9 +49,9 @@ function Education({ education, setCvData }) {
     // Reset form and editing state
     setFormData({
       id: nextId.current,
-      school: "",
-      degree: "",
-      studyDate: "",
+      company: "",
+      position: "",
+      workDate: "",
       location: "",
     });
     setEditingIndex(null);
@@ -62,9 +62,9 @@ function Education({ education, setCvData }) {
     setEditingIndex(null); // Indicates adding new entry
     setFormData({
       id: nextId.current,
-      school: "",
-      degree: "",
-      studyDate: "",
+      company: "",
+      position: "",
+      workDate: "",
       location: "",
     });
     setIsEditing(true);
@@ -79,15 +79,15 @@ function Education({ education, setCvData }) {
   function handleRemove(edu) {
     setCvData((prev) => ({
       ...prev,
-      education: prev.education.filter((item) => item.id !== edu.id),
+      experience: prev.experience.filter((item) => item.id !== edu.id),
     }));
 
     // Reset form and editing state
     setFormData({
       id: nextId.current,
-      school: "",
-      degree: "",
-      studyDate: "",
+      company: "",
+      position: "",
+      workDate: "",
       location: "",
     });
     setEditingIndex(null);
@@ -95,49 +95,49 @@ function Education({ education, setCvData }) {
   }
 
   return (
-    <div className="education-info container">
-      <h2>Education</h2>
+    <div className="experience-info container">
+      <h2>Experience</h2>
 
-      {education.map((edu, index) => (
+      {experience.map((edu, index) => (
         <button
           key={edu.id}
           onClick={() => handleEditSpecific(edu, index)}
           style={{ backgroundColor: "oklch(60% 0 0)" }}
         >
-          {edu.school}
+          {edu.company}
         </button>
       ))}
 
       {isEditing ? (
         <form onSubmit={handleSubmit}>
-          <label htmlFor="school">School</label>
+          <label htmlFor="company">Company</label>
           <input
             type="text"
-            id="school"
-            name="school"
-            placeholder="New York University"
-            value={formData.school}
+            id="company"
+            name="company"
+            placeholder="Google"
+            value={formData.company}
             onChange={handleChange}
             required
           />
 
-          <label htmlFor="degree">Degree</label>
+          <label htmlFor="position">Position</label>
           <input
             type="text"
-            id="degree"
-            name="degree"
-            placeholder="Bachelor of Science"
-            value={formData.degree}
+            id="position"
+            name="position"
+            placeholder="Junior developer"
+            value={formData.position}
             onChange={handleChange}
           />
 
-          <label htmlFor="studyDate">Date of study</label>
+          <label htmlFor="workDate">Date of Work</label>
           <input
             type="text"
-            id="studyDate"
-            name="studyDate"
+            id="workDate"
+            name="workDate"
             placeholder="2020-2024"
-            value={formData.studyDate}
+            value={formData.workDate}
             onChange={handleChange}
           />
 
@@ -146,7 +146,7 @@ function Education({ education, setCvData }) {
             type="text"
             id="location"
             name="location"
-            placeholder="USA, New York"
+            placeholder="USA, California"
             value={formData.location}
             onChange={handleChange}
           />
@@ -163,10 +163,10 @@ function Education({ education, setCvData }) {
           </div>
         </form>
       ) : (
-        <button onClick={handleEdit}>+ Education</button>
+        <button onClick={handleEdit}>+ Experience</button>
       )}
     </div>
   );
 }
 
-export { Education };
+export { Experience };

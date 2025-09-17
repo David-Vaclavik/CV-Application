@@ -35,6 +35,21 @@ function CVPreview({ cvData }) {
       <hr />
 
       <h2>Experience</h2>
+
+      <div className="experience-section">
+        {cvData.experience.map((exp) => (
+          <div key={exp.id} className="school-info">
+            <div className="date-location">
+              <p>{exp.workDate}</p>
+              <p>{exp.location}</p>
+            </div>
+            <div className="company-position">
+              <b>{exp.company}</b>
+              <p>{exp.position}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
